@@ -1,17 +1,17 @@
 'use strict'
 
 let notify = (type, req, socket, head, prevStats, callback, error) => {
-		let stats = {};
-		stats.bytesRead = socket.bytesRead - prevStats.bytesRead;
-		stats.bytesWritten = socket.bytesWritten - prevStats.bytesWritten;
-		prevStats.bytesRead = socket.bytesRead;
-		prevStats.bytesWritten = socket.bytesWritten;
-		stats.host = req.headers.host;
-		stats.type = type;
-		stats.error = error;
-		stats.remoteAddr = socket.remoteAddress;
+  let stats = {};
+  stats.bytesRead = socket.bytesRead - prevStats.bytesRead;
+  stats.bytesWritten = socket.bytesWritten - prevStats.bytesWritten;
+  prevStats.bytesRead = socket.bytesRead;
+  prevStats.bytesWritten = socket.bytesWritten;
+  stats.host = req.headers.host;
+  stats.type = type;
+  stats.error = error;
+  stats.remoteAddr = socket.remoteAddress;
 
-		callback(stats);
+  callback(stats);
 };
 
 let shouldNotify = (eventType, includeOnlyEvents) => {
@@ -25,11 +25,11 @@ let handle = (server, includeOnlyEvents, callback) => {
 
   server.on('upgrade', function (req, socket, head) {
 
-		let previousStats = {
-			"bytesRead": 0,
-			"bytesWritten": 0,
-			"host": ""
-		};
+    let previousStats = {
+    	"bytesRead": 0,
+    	"bytesWritten": 0,
+    	"host": ""
+    };
 
     if (shouldNotify("init", includeOnlyEvents)) {
 	    notify("init", req, socket, head, previousStats, callback, null);
