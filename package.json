@@ -14,13 +14,16 @@
     "WebSocket",
     "WS"
   ],
-  "author": "Martin Lévesque",
+  "author": "Martin Lévesque <levesque.martin@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/martinlevesque/websocket-stats/issues"
   },
   "homepage": "https://github.com/martinlevesque/websocket-stats#readme",
   "dependencies": {},
+  "engines": {
+    "node": ">=4.8.3"
+  },
   "devDependencies": {
     "expect.js": "^0.3.1",
     "express": "^4.15.2",
