@@ -18,9 +18,9 @@ Get stats for each websocket message:
 
 ```javascript
 const websocketStats = require('websocket-stats');
-var server = http.createServer(...);
+let server = http.createServer(...);
 
-websocketStats(server, null, function (stats) {
+websocketStats(server, null, (stats) => {
   console.log(stats);
 })
 ```
@@ -29,9 +29,9 @@ Get stats only for normal data (not error/init/states/end) messages:
 
 ```javascript
 const websocketStats = require('websocket-stats');
-var server = http.createServer(...);
+let server = http.createServer(...);
 
-websocketStats(server, ["data"], function (stats) {
+websocketStats(server, ["data"],  (stats) => {
   console.log(stats);
 })
 ```
@@ -42,7 +42,7 @@ websocketStats(server, ["data"], function (stats) {
 
 #### `websocketStats(server, eventTypes, callback)`
 
-Attach websocket-stats to a HTTP or HTTPS server. `eventTypes` is a list (or null object) of string types to monitor. When `eventTypes` is set to null, all types will be monitored. When an message occur, the callback method is called.
+Attach websocket-stats to a HTTP or HTTPS server. `eventTypes` is a list (or null object) of string types to monitor. When `eventTypes` is set to null, all types will be monitored. When a message occurs, the callback method is called.
 
 ## Response stats object
 
@@ -56,6 +56,9 @@ Attach websocket-stats to a HTTP or HTTPS server. `eventTypes` is a list (or nul
   error: error          // error object if an error has occured, null otherwise
 }
 ```
+
+The type can have one the following values: `init`, `data`, `error`, `end`, `connect`, `lookup`,
+`timeout`, `drain`, `close`.
 
 ## License
 
