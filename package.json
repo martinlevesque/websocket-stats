@@ -1,0 +1,32 @@
+{
+  "name": "websocket-stats",
+  "version": "1.0.0",
+  "description": "Get stats on your Node HTTP(S) Websocket server requests",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./node_modules/mocha/bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martinlevesque/websocket-stats.git"
+  },
+  "keywords": [
+    "WebSocket",
+    "WS"
+  ],
+  "author": "Martin Lévesque",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/martinlevesque/websocket-stats/issues"
+  },
+  "homepage": "https://github.com/martinlevesque/websocket-stats#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "expect.js": "^0.3.1",
+    "express": "^4.15.2",
+    "mocha": "^3.3.0",
+    "url": "^0.11.0",
+    "websocket": "^1.0.24",
+    "ws": "^2.3.1"
+  }
+}
